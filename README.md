@@ -22,6 +22,26 @@
 
 <br>
 
+### Projects
+
+- 📡 **Creset Growth Radar** · 1st place, Product Build Challenge → [creset-radar-growth.base44.app](https://creset-radar-growth.base44.app/)
+- 🤖 **Infinite Policy-Based RL** (AI@UNC) · dataset and oracle pod with Hugging Face Datasets · *private repository*
+- 📱 **Carolina App Team iOS app** · Swift → [momacaes9/iOS](https://github.com/momacaes9/iOS)
+- 💬 **Data chatbot** · Supabase + n8n → [momacaes9/n8n](https://github.com/momacaes9/n8n)
+
+<br>
+
+### Awards
+
+| Award | Organization | Date |
+|---|---|---|
+| 1st place, Product Build Challenge | Creset x Product Management Club | Oct 2026 |
+| 1st place, Case Competition | International Consultancy Club | 2026 |
+| Finalist, $1,000 Challenge | T-0 x Base44 | Sep 2026 |
+| Top 16 Finalist | Global Youth Challenge | Mar 2026 |
+
+<br>
+
 ### Tech
 
 **Languages**<br>
@@ -44,8 +64,19 @@
 
 <br>
 
+### Portfolio
+
+- 🌐 Personal portfolio: [momacaes9.github.io](https://momacaes9.github.io)
+- 💻 Technical portfolio: [momacaes9/momacaes9.github.io](https://github.com/momacaes9/momacaes9.github.io) (the site's code)
+
+<br>
+
 ### Connect
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-13294B?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUyLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2MtMS4xNDQgMC0yLjA2My0uOTI2LTIuMDYzLTIuMDY1IDAtMS4xMzguOTItMi4wNjMgMi4wNjMtMi4wNjMgMS4xNCAwIDIuMDY0LjkyNSAyLjA2NCAyLjA2MyAwIDEuMTM5LS45MjUgMi4wNjUtMi4wNjQgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiIvPjwvc3ZnPg%3D%3D)](https://www.linkedin.com/in/monicamacaes)
 [![Portfolio](https://img.shields.io/badge/Portfolio-4B9CD3?style=for-the-badge&logo=githubpages&logoColor=white)](https://momacaes9.github.io)
 [![Email](https://img.shields.io/badge/Email-13294B?style=for-the-badge&logo=gmail&logoColor=white)](mailto:momacaes@unc.edu)
+
+<br>
+
+🇧🇷 Também disponível em português no meu site.
