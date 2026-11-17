@@ -4,7 +4,7 @@
 Outputs (in assets/):
   chat.svg       iMessage-style intro bubbles
   languages.svg  live language dashboard (by code size and by repository)
-  puzzle.svg     contribution calendar drawn as interlocking jigsaw pieces
+  contributions.svg  contribution heatmap for the last year
   stats.json     raw numbers for the interactive dashboard
 
 Data sources:
@@ -373,7 +373,7 @@ def build_puzzle(d: dict) -> str:
 
     p = [f'<rect width="{W}" height="{H}" rx="18" fill="{BG}"/>',
          f'<text x="{ox-20}" y="38" font-family="{FONT}" font-size="20" font-weight="700" fill="{TEXT}">'
-         f'My year, one puzzle piece per day</text>']
+         f'Contributions this year</text>']
     seen = set()
     for w in range(weeks):
         day = start + dt.timedelta(days=w * 7)
@@ -391,28 +391,27 @@ def build_puzzle(d: dict) -> str:
         bottom = edge_sign("v", w, wd) if (w, wd + 1) in grid else 0
         left = -edge_sign("h", w - 1, wd) if (w - 1, wd) in grid else 0
         right = edge_sign("h", w, wd) if (w + 1, wd) in grid else 0
-        path = piece_path(ox + w * s, oy + wd * s, s, top, right, bottom, left)
+        cell = f'x="{ox + w*s + 1.5:.2f}" y="{oy + wd*s + 1.5:.2f}" width="{s-3:.2f}" height="{s-3:.2f}" rx="3"'
         lv = level(v)
         if lv == 0:
-            empty.append(f'<path d="{path}" fill="{colors[0]}" stroke="{BG}" stroke-width="1.2"/>')
+            empty.append(f'<rect {cell} fill="{colors[0]}"/>')
         else:
             day = start + dt.timedelta(days=w * 7 + wd)
-            filled.append(f'<path d="{path}" fill="{colors[lv]}" stroke="{BG}" stroke-width="1.2" '
-                          f'class="pc" style="animation-delay:{0.3 + w*0.04 + wd*0.012:.2f}s">'
-                          f'<title>{v} contribution{"s" if v != 1 else ""} on {day:%b %d}</title></path>')
+            filled.append(f'<rect {cell} fill="{colors[lv]}" class="pc" '
+                          f'style="animation-delay:{0.3 + w*0.03 + wd*0.01:.2f}s">'
+                          f'<title>{v} contribution{"s" if v != 1 else ""} on {day:%b %d}</title></rect>')
     p += empty + filled
 
     total = sum(days.values())
     active = sum(1 for v in days.values() if v)
     cur, longest, best = streaks(days)
     ly = oy + 7 * s + 28
-    p.append(f'<text x="{ox}" y="{ly}" font-family="{FONT}" font-size="10" fill="{MUTED}">missing piece</text>')
+    p.append(f'<text x="{ox}" y="{ly}" font-family="{FONT}" font-size="10" fill="{MUTED}">less</text>')
     for i, c in enumerate(colors):
-        lx = ox + 74 + i * 15
-        p.append(f'<path d="{piece_path(lx, ly-10, 11, 0, 1 if i < 4 else 0, 0, -1 if i else 0)}" '
-                 f'fill="{c}" stroke="{BG}"/>')
-    p.append(f'<text x="{ox + 74 + 5*15 + 8}" y="{ly}" font-family="{FONT}" font-size="10" fill="{MUTED}">more</text>')
-    stats = [(f"{total}", "contributions"), (f"{active}", "pieces placed"),
+        lx = ox + 30 + i * 15
+        p.append(f'<rect x="{lx}" y="{ly-10}" width="11" height="11" rx="3" fill="{c}"/>')
+    p.append(f'<text x="{ox + 30 + 5*15 + 4}" y="{ly}" font-family="{FONT}" font-size="10" fill="{MUTED}">more</text>')
+    stats = [(f"{total}", "contributions"), (f"{active}", "active days"),
              (f"{cur} days", "current streak"), (f"{longest} days", "longest streak"),
              (f"{dt.date.fromisoformat(best):%b %d}" if best and days[best] else "—", "best day")]
     sw = (W - ox - 28) / len(stats)
@@ -422,11 +421,11 @@ def build_puzzle(d: dict) -> str:
                  f'<text x="{x:.1f}" y="{ly+40}" font-family="{FONT}" font-size="19" font-weight="700" fill="{BLUE}">{val}</text>'
                  f'<text x="{x:.1f}" y="{ly+56}" font-family="{FONT}" font-size="10" fill="{MUTED}">{lab}</text></g>')
     style = (".pc{opacity:0;transform-box:fill-box;transform-origin:center;"
-             "animation:snap .55s cubic-bezier(.2,.9,.3,1.4) forwards}"
+             "animation:snap .4s ease-out forwards}"
              ".fade{opacity:0;animation:fade .6s ease forwards}"
-             "@keyframes snap{0%{opacity:0;transform:translate(-8px,-12px) rotate(-30deg) scale(.5)}"
+             "@keyframes snap{0%{opacity:0;transform:scale(.3)}"
              "100%{opacity:1;transform:none}}@keyframes fade{to{opacity:1}}")
-    return svg(int(W), int(H), "".join(p), style, "Contribution puzzle")
+    return svg(int(W), int(H), "".join(p), style, "Contribution heatmap")
 
 
 # --------------------------------------------------------------------------- main
@@ -438,7 +437,7 @@ def main():
     ASSETS.mkdir(exist_ok=True)
     (ASSETS / "chat.svg").write_text(build_chat(), encoding="utf-8")
     (ASSETS / "languages.svg").write_text(build_languages(data), encoding="utf-8")
-    (ASSETS / "puzzle.svg").write_text(build_puzzle(data), encoding="utf-8")
+    (ASSETS / "contributions.svg").write_text(build_puzzle(data), encoding="utf-8")
     # Raw numbers for the interactive dashboard (momacaes9.github.io/dashboard.html)
     data["updated"] = dt.date.today().isoformat()
     (ASSETS / "stats.json").write_text(json.dumps(data, sort_keys=True), encoding="utf-8")

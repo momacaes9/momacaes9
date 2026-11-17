@@ -1,6 +1,16 @@
 <img src="assets/banner.png" width="100%">
 
 <p align="center">
+  <a href="https://momacaes9.github.io">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&pause=1000&color=4B9CD3&center=true&vCenter=true&width=700&lines=Hi%2C+I%27m+Monica+%F0%9F%91%8B;Economics+%2B+Data+Science+%40+UNC;Python+%C2%B7+AI+%C2%B7+Data+Analytics" alt="Hi, I'm Monica" />
+  </a>
+</p>
+
+<p align="center">
+  BS Economics + Data Science at UNC Chapel Hill '30 · from São Paulo, Brazil · into economic consulting, data science and AI
+</p>
+
+<p align="center">
   <img src="assets/chat.svg" width="100%" alt="Hi, I'm Monica. Economics + Data Science at UNC Chapel Hill '30, from São Paulo, Brazil.">
 </p>
 
@@ -48,11 +58,11 @@
 
 <p align="center"><img src="assets/languages.svg" width="100%" alt="Live language dashboard"></p>
 
-<p align="center"><img src="assets/puzzle.svg" width="100%" alt="Contribution calendar drawn as puzzle pieces"></p>
+<p align="center"><img src="assets/contributions.svg" width="100%" alt="Contribution heatmap"></p>
 
 <p align="center"><a href="https://momacaes9.github.io/dashboard.html"><img src="https://img.shields.io/badge/🎨_Make_it_yours-open_the_interactive_dashboard-4B9CD3?style=for-the-badge"></a></p>
 
-<sub>Both cards are regenerated every day by a GitHub Action (<code>scripts/build_profile.py</code>) from my public repos. The interactive version lets you pick the colors, switch light/dark and hover every puzzle piece.</sub>
+<sub>Both cards are regenerated every day by a GitHub Action (<code>scripts/build_profile.py</code>) from my public repos. The interactive version lets you pick the colors, switch light/dark and hover every day.</sub>
 
 <br>
 
